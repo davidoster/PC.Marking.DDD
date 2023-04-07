@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{1702CEF9-8A93-43DF-B828-1F0356F28498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoInterfaces", "Domain\RepoInterfaces\RepoInterfaces.csproj", "{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Domain", "01.Domain", "{EE988F33-0145-422F-A352-D933D4D46D9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1702CEF9-8A93-43DF-B828-1F0356F28498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1702CEF9-8A93-43DF-B828-1F0356F28498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1702CEF9-8A93-43DF-B828-1F0356F28498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1702CEF9-8A93-43DF-B828-1F0356F28498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1702CEF9-8A93-43DF-B828-1F0356F28498} = {EE988F33-0145-422F-A352-D933D4D46D9D}
+		{2D007FDC-F2CA-4F9E-A987-4E70B2284CD9} = {EE988F33-0145-422F-A352-D933D4D46D9D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57198D2A-3E42-4257-B112-05B3E771B6DF}
+	EndGlobalSection
+EndGlobal
