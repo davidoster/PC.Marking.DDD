@@ -1,5 +1,5 @@
 ﻿namespace Domain; 
-public class Exam : GenericExam {
+public class Exam {
     public int Id { get; set; }
     public Dictionary<Question, bool> AutoMarkGrade { get; set; }
     public StateEnum State { get; set; }
