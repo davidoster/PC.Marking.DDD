@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RepoInterfaces
 {
-    internal interface IExam
+    internal interface IExamMarking
     {
         /// <summary>
         /// Gets all the exams of a specific marker
@@ -24,5 +24,7 @@ namespace RepoInterfaces
         /// <param name="examId"></param>
         /// <returns></returns>
         double MarkExam(int examId);
+        double MarkQuestion(int examId, int questionId);
+        double MarkSection(int examId, int sectionId);
     }
 }
