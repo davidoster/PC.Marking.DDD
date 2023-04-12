@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RepoInterfaces {
-    internal interface IExam {
+    internal interface IExam : IGenericRepo<Exam> {
         /// <summary>
         /// Gets all the exams of a specific marker
         /// </summary>
@@ -22,6 +22,9 @@ namespace RepoInterfaces {
         /// <returns></returns>
 
         //double MarkExam(int examId);        
-        double SendExam(int examId);
+        double SendExam(Guid examId);
+        Task<int?> GradeAQuestionAuto(Question question);
+        Task<double?> GradeQuestionListAuto(List<Question> questionList);
+        Task<double> MarkExamAuto(Guid examId);
     }
 }

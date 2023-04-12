@@ -1,11 +1,11 @@
 ﻿namespace Domain; 
 public class Exam {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public Dictionary<Question, bool> AutoMarkGrade { get; set; }
     public StateEnum State { get; set; }
     public DateTime DateAssigned { get; set; }
+    public string Section { get; set; }
     public Dictionary<Question, List<Option>> CandidatesAnswers { get; set; }
-    public Dictionary<Question, bool> AutoMark { get; set; } // Ti kanoume me ta multiple answers?
     public Dictionary<Question, bool?>? MarkersMarking { get; set; }
 }
 
