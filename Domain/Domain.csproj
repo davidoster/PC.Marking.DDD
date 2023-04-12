@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="RepoInterfaces\**" />
+    <EmbeddedResource Remove="RepoInterfaces\**" />
+    <None Remove="RepoInterfaces\**" />
+  </ItemGroup>
+
 </Project>

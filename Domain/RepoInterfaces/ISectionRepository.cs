@@ -1,0 +1,11 @@
+﻿using Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RepoInterfaces;
+    public interface ISectionRepository : IGenericRepository<Section> {
+        Task<Section> MarkSectionAuto(List<Section> sectionList);
+    }
