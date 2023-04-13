@@ -10,7 +10,15 @@ namespace Application {
         private readonly IQuestionMarkingBase _questionMarking;
         public SectionMarkingBase(IQuestionMarkingBase questionMarkingBase) => _questionMarking = questionMarkingBase;
 
-        public async Task<Section> SectionMarkingService(Section section) {
+        public async Task<Section> SectionMarkingService(Section section)
+        {
+            foreach(Question question in section.Questions) 
+            {
+                await _questionMarking.QuestionMarkingService(question);
+                    section.AwardedSectionMarks += question.AwardedMarks;
+               
+            }
+            
             return section;
         }
     }
