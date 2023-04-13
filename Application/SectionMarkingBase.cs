@@ -14,7 +14,7 @@ namespace Application {
             foreach(Question question in section.Questions) {
                 await _questionMarking.QuestionMarkingService(question);
                     section.AwardedSectionMarks += question.AwardedMarks;
-                
+               
             }
             
             return section;
