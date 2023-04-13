@@ -1,4 +1,6 @@
-﻿using Domain;
+﻿using ApplicationDbContext;
+using Domain;
+using Microsoft.EntityFrameworkCore;
 using RepoInterfaces;
 using System;
 using System.Collections.Generic;
@@ -7,29 +9,47 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Infrastructure {
-    public class QuestionRepository : IQuestionRepository {
-        public Task Delete(int Id) {
-            throw new NotImplementedException();
+    public class QuestionRepository : IQuestionRepository 
+    {
+        private readonly MarkingDbContext _markingDbContext;
+        public QuestionRepository(MarkingDbContext applicationDbContext)
+        {
+            _markingDbContext = applicationDbContext;
+            
+        }
+        public async Task Delete(int Id) 
+        {
+            _markingDbContext.Questions.Remove( await GetById(Id));
+            await Save();
+
+           
         }
 
-        public Task<List<Question>> GetAll() {
-            throw new NotImplementedException();
+        public async Task<List<Question>> GetAll() {
+            return await _markingDbContext.Questions.ToListAsync();
         }
 
-        public Task<Question> GetById(int Id) {
-            throw new NotImplementedException();
+        public async Task<Question> GetById(int Id) {
+            return await _markingDbContext.Questions.FirstAsync(q => q.Id == Id);
         }
 
-        public Task<Question> Insert() {
-            throw new NotImplementedException();
+       
+
+        public async Task<Question> Insert(Question entity)
+        {
+            await _markingDbContext.Questions.AddAsync(entity);
+            await Save();
+            return entity;
         }
 
-        public Task Save() {
-            throw new NotImplementedException();
+        public async Task Save() {
+           await _markingDbContext.SaveChangesAsync();
         }
 
-        public Task<Question> Update(Question entity) {
-            throw new NotImplementedException();
+        public async Task<Question> Update(Question entity) {
+            _markingDbContext.Update(entity);
+            await Save();
+            return entity;
         }
     }
 }
