@@ -1,10 +1,14 @@
 ﻿using Domain;
+using RepoInterfaces;
 
 namespace Application {
     public class QuestionMarkingBase {
+        private readonly IQuestionRepository _questionRepository;
+        public QuestionMarkingBase(IQuestionRepository questionRepository) =>  _questionRepository = questionRepository;
 
-
-        public Question QuestionMarkingService(Question question) {
+        public async Task<Question> QuestionMarkingService(Question question) {
+            
+            
             return question;
         }
     }
