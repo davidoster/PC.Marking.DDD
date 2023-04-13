@@ -1,4 +1,6 @@
-﻿using Domain;
+﻿using ApplicationDbContext;
+using Domain;
+using Microsoft.EntityFrameworkCore;
 using RepoInterfaces;
 using System;
 using System.Collections.Generic;
@@ -8,28 +10,40 @@ using System.Threading.Tasks;
 
 namespace Infrastructure {
     public class SectionRepository : ISectionRepository {
-        public Task Delete(int Id) {
-            throw new NotImplementedException();
+
+        private readonly MarkingDbContext _markingDbContext;
+
+        public SectionRepository(MarkingDbContext applicationDbContext)
+        {
+            _markingDbContext = applicationDbContext;
+        }
+        public async Task Delete(int Id) {
+            _markingDbContext.Sections.Remove(await GetById(Id));
+            await Save();
         }
 
-        public Task<List<Section>> GetAll() {
-            throw new NotImplementedException();
+        public async Task<List<Section>> GetAll() {
+            return await _markingDbContext.Sections.ToListAsync();
         }
 
-        public Task<Section> GetById(int Id) {
-            throw new NotImplementedException();
+        public async Task<Section> GetById(int Id) {
+            return await _markingDbContext.Sections.FirstAsync(x => x.Id == Id);
         }
 
-        public Task<Section> Insert() {
-            throw new NotImplementedException();
+        public async Task<Section> Insert(Section entity) {
+            await _markingDbContext.Sections.AddAsync(entity);
+            await Save();
+            return entity;
         }
 
-        public Task Save() {
-            throw new NotImplementedException();
+        public async Task Save() {
+            await _markingDbContext.SaveChangesAsync();
         }
 
-        public Task<Section> Update(Section entity) {
-            throw new NotImplementedException();
+        public async Task<Section> Update(Section entity) {
+            _markingDbContext.Update(entity);
+            await Save();
+            return entity;
         }
     }
 }

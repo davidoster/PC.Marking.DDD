@@ -14,7 +14,7 @@ namespace RepoInterfaces {
 
 
         // CRUD Operation
-        Task<T> Insert();
+        Task<T> Insert(T entity);
         Task<T> Update(T entity);
         Task Delete(int Id);
         Task<T> GetById(int Id);
