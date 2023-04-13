@@ -18,7 +18,7 @@ namespace Infrastructure {
         }
         public async Task Delete(int Id) {
 
-             _context.Exams.Remove(await GetById(Id));
+            _context.Exams.Remove(await GetById(Id));
             await Save();
         }
 
