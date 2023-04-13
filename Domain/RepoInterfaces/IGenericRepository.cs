@@ -8,10 +8,15 @@ using System.Threading.Tasks;
 namespace RepoInterfaces {
     public interface IGenericRepository<T> where T : class {
         // these are queries.
-        Task<T> GetById(int Id);
         Task<List<T>> GetAll();
-        Task<List<T>> GetUnmarkedList();
-        Task<List<T>> GetMarkedList();
+
         Task Save();
+
+
+        // CRUD Operation
+        Task<T> Insert();
+        Task<T> Update(T entity);
+        Task Delete(int Id);
+        Task<T> GetById(int Id);
     }
 }

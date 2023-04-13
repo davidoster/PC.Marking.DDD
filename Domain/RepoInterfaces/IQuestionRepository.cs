@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepoInterfaces {
+namespace RepoInterfaces;
     public interface IQuestionRepository : IGenericRepository<Question> {
-        Task<Question> MarkAQuestionAuto(Question question);
+        
     }
-}

@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace RepoInterfaces;
     public interface ISectionRepository : IGenericRepository<Section> {
-        Task<Section> MarkSectionAuto(List<Section> sectionList);
+        
     }

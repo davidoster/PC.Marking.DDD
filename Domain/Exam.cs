@@ -8,5 +8,6 @@ namespace Domain {
     public class Exam {
         public int Id { get; set; }
         List<Section> Sections { get; set; }
+        public MarkingState MarkingState { get; set; }
     }
 }

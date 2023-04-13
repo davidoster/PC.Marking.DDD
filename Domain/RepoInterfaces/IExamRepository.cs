@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace RepoInterfaces {
     public interface IExamRepository : IGenericRepository<Exam> {
- 
-       
+        Task<List<Exam>> GetUnmarkedList();
+        Task<List<Exam>> GetMarkedList();
+
 
 
         // these are commands.
-        Task<Exam> MarkExamAuto(Exam exam);
-        Task<Exam> SendExam(Exam exam);
+
         
     }
 }
