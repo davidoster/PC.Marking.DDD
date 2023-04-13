@@ -7,8 +7,8 @@ namespace Application {
         public QuestionMarkingBase(IQuestionRepository questionRepository) =>  _questionRepository = questionRepository;
 
         public async Task<Question> QuestionMarkingService(Question question) {
-            
-            
+
+            question.AwardedAnswers.ForEach(answer => { if (answer.Option.IsCorrect == true) { question.AwardedMarks = question.MaximumMarks;}}); 
             return question;
         }
     }
